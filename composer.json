@@ -1,0 +1,58 @@
+{
+    "name": "topphp/topphp-wechat",
+    "type": "library",
+    "description": "基于easywechat的微信组件",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "topphp",
+            "email": "sleep@kaituocn.com",
+            "homepage": "https://github.com/topphp",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "~7.2",
+        "overtrue/wechat": "~4.0",
+        "topthink/framework": "^6.0.2"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.5",
+        "topphp/topphp-testing": "*",
+        "swoole/ide-helper": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Topphp\\TopphpWechat\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Topphp\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit -c ./phpunit.xml.dist",
+        "check-style": "phpcs src tests",
+        "fix-style": "phpcbf src tests"
+    },
+    "extra": {
+        "think": {
+            "services": [
+                "Topphp\\TopphpWechat\\service\\WeChatService"
+            ],
+            "config": {
+                "wechat": "config/wechat.php"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer"
+        }
+    }
+}
