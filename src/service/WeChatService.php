@@ -16,7 +16,6 @@ class WeChatService extends Service
 {
     public function register()
     {
-        var_dump('WeChatService:register');
         $this->app->make(WeChat::class);
     }
 }
